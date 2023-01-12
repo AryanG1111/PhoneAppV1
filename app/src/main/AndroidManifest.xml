@@ -27,6 +27,8 @@
                 android:value="" />
         </activity>
         <activity android:name=".QuestionSequence"></activity>
+        <activity android:name=".Riddles"></activity>
+        <activity android:name=".BrainTraining"></activity>
     </application>
 
 </manifest>
