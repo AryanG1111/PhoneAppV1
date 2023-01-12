@@ -25,7 +25,9 @@ public class BrainTraining extends AppCompatActivity implements View.OnClickList
     SeekBar numQbar, diffBar;
     Button confirm_button;
 
-    public BrainTraining() {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.select_menu);
         subject = findViewById(R.id.subjectGroup);
         feedback = findViewById(R.id.boxFeedback);
