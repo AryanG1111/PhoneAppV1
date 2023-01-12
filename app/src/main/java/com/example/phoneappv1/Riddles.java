@@ -19,8 +19,11 @@ public class Riddles extends AppCompatActivity implements View.OnClickListener{
 
     TextInputEditText textbox;
     TextView question;
+    TextView ansBox;
     Button confirm_button;
     Button exit_button;
+    String ans;
+    String q;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +32,18 @@ public class Riddles extends AppCompatActivity implements View.OnClickListener{
             setContentView(R.layout.riddle_question);
             textbox = findViewById(R.id.riddleAnswer);
             question = findViewById(R.id.txtQuestion);
+            ansBox = findViewById(R.id.txtAnswer);
             exit_button = findViewById(R.id.exitButton);
             confirm_button = findViewById(R.id.btnSubmit);
-            confirm_button.setOnClickListener(this);
-            exit_button.setOnClickListener(this);
             BufferedReader br = new BufferedReader(new InputStreamReader(this.getAssets().open("riddles.txt")));
             RiddleReader rr = new RiddleReader(br);
             int num = (int) (Math.random()*5);
             if (num == 5)
                 num = 4;
-            String q = rr.getRiddle(num).getQuestion();
-            String ans = rr.getRiddle(num).getAns();
+            q = rr.getRiddle(num).getQuestion();
+            ans = rr.getRiddle(num).getAns();
+            confirm_button.setOnClickListener(this);
+            exit_button.setOnClickListener(this);
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -49,9 +53,15 @@ public class Riddles extends AppCompatActivity implements View.OnClickListener{
 
 
     public void onClick(View view) {
-        String text;
-        if(textbox.getText() != null)
-            text = textbox.getText().toString();
+
+        switch(view.getId()) {
+            case R.id.confirm_button:
+                if(textbox.getText() != null)
+                    ansBox.setText("Correct Answer: " + ans);
+            case R.id.exit_button:
+                finish();
+        }
+
 
 
     }
