@@ -21,11 +21,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="75dp"
+        android:layout_marginRight="50dp"
+        android:text=""
+        app:layout_constraintHorizontal_bias=".0"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Monday" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="35dp"
         android:layout_marginRight="50dp"
         android:text="4:30 PM - Video Call with Family"
         app:layout_constraintHorizontal_bias=".0"
@@ -33,7 +48,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Monday" />
+        app:layout_constraintTop_toTopOf="@+id/call" />
 
     <TextView
         android:id="@+id/textView1"
@@ -66,7 +81,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView1" />
 
     <Button
-        android:id="@+id/Add_button"
+        android:id="@+id/add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -79,11 +94,12 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/Add_button"
+        app:layout_constraintBottom_toTopOf="@+id/add_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Add an activity to do" />

@@ -29,6 +29,8 @@
         <activity android:name=".QuestionSequence"></activity>
         <activity android:name=".Riddles"></activity>
         <activity android:name=".BrainTraining"></activity>
+        <activity android:name=".Schedule"></activity>
+        <activity android:name=".ScheduleDay"></activity>
     </application>
 
 </manifest>

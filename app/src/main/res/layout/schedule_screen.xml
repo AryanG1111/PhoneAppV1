@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TextView8" />
 
     <RadioGroup
-        android:id="@+id/ActivityGroup"
+        android:id="@+id/DayGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"

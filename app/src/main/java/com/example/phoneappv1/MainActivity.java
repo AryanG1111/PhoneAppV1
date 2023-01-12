@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     intent = new Intent(this, Riddles.class);
                     startActivity(intent);
                     break;
+                case ("Schedule"):
+                    intent = new Intent(this, Schedule.class);
+                    startActivity(intent);
+                    break;
             }
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
