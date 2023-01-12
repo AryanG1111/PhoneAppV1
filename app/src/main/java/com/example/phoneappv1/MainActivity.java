@@ -39,20 +39,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void newActivity(String a) {
         try {
-            Intent intent = new Intent(this, QuestionSequence.class);
             Bundle b = new Bundle();
+            Intent intent;
 
 
             switch(a) {
                 case ("Brain Training"):
-                    startActivity(new Intent (this, BrainTraining.class));
+                    intent = new Intent(this, BrainTraining.class);
+                    intent.putExtras(b);
+                    startActivity(intent);
                 case ("Riddles"):
-                    startActivity(new Intent (this, Riddle.class));
+                    intent = new Intent(this, Riddles.class);
+                    intent.putExtras(b);
+                    startActivity(intent);
             }
-
-            intent.putExtras(b);
-
-            startActivity(intent);
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
