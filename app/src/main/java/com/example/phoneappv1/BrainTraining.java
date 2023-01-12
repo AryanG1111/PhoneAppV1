@@ -24,6 +24,7 @@ public class BrainTraining extends AppCompatActivity implements View.OnClickList
     RatingBar diffRat;
     SeekBar numQbar, diffBar;
     Button confirm_button;
+    Button exit_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class BrainTraining extends AppCompatActivity implements View.OnClickList
         numQbar = findViewById(R.id.numQBar);
         diffBar = findViewById(R.id.diffBar);
         confirm_button = findViewById(R.id.confirm_button);
+        exit_button = findViewById(R.id.exit_button);
 
         numQbar.setOnSeekBarChangeListener(this);
         diffBar.setOnSeekBarChangeListener(this);
@@ -69,11 +71,18 @@ public class BrainTraining extends AppCompatActivity implements View.OnClickList
     }
 
     public void onClick(View view) {
-        int numQ = numQbar.getProgress() * 5 + 5;
-        int diff = diffBar.getProgress() + 1;
-        boolean fb = feedback.isChecked();
-        String sub = ((RadioButton) findViewById(subject.getCheckedRadioButtonId())).getText().toString();
-        newQuestionSequence(sub, numQ, diff, fb);
+        switch (view.getId()){
+            case R.id.confirm_button:
+                int numQ = numQbar.getProgress() * 5 + 5;
+                int diff = diffBar.getProgress() + 1;
+                boolean fb = feedback.isChecked();
+                String sub = ((RadioButton) findViewById(subject.getCheckedRadioButtonId())).getText().toString();
+                newQuestionSequence(sub, numQ, diff, fb);
+                break;
+            case R.id.exit_button:
+                finish();
+        }
+
     }
 
 
