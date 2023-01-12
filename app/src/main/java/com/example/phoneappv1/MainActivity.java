@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void newActivity(String a) {
         try {
+
             Bundle b = new Bundle();
             Intent intent;
 
@@ -46,12 +47,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             switch(a) {
                 case ("Brain Training"):
                     intent = new Intent(this, BrainTraining.class);
-                    intent.putExtras(b);
                     startActivity(intent);
+                    Toast.makeText(this, a, Toast.LENGTH_SHORT).show();
+                    break;
                 case ("Riddles"):
                     intent = new Intent(this, Riddles.class);
-                    intent.putExtras(b);
                     startActivity(intent);
+                    break;
             }
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();

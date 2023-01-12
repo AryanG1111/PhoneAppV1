@@ -42,6 +42,7 @@ public class BrainTraining extends AppCompatActivity implements View.OnClickList
         numQbar.setOnSeekBarChangeListener(this);
         diffBar.setOnSeekBarChangeListener(this);
         confirm_button.setOnClickListener(this);
+        exit_button.setOnClickListener(this);
 
     }
 
@@ -81,6 +82,7 @@ public class BrainTraining extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.exit_button:
                 finish();
+                break;
         }
 
     }

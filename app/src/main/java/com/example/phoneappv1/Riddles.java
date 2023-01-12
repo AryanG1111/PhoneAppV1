@@ -42,6 +42,7 @@ public class Riddles extends AppCompatActivity implements View.OnClickListener{
                 num = 4;
             q = rr.getRiddle(num).getQuestion();
             ans = rr.getRiddle(num).getAns();
+            question.setText(q);
             confirm_button.setOnClickListener(this);
             exit_button.setOnClickListener(this);
         } catch (Exception e) {
@@ -55,11 +56,13 @@ public class Riddles extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View view) {
 
         switch(view.getId()) {
-            case R.id.confirm_button:
+            case R.id.btnSubmit:
                 if(textbox.getText() != null)
                     ansBox.setText("Correct Answer: " + ans);
-            case R.id.exit_button:
+                break;
+            case R.id.exitButton:
                 finish();
+                break;
         }
 
 
