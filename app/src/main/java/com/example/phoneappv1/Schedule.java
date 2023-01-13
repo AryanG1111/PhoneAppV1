@@ -22,6 +22,8 @@ public class Schedule extends AppCompatActivity implements View.OnClickListener{
         day = findViewById(R.id.DayGroup);
         confirm_button = findViewById(R.id.confirm_button);
         exit_button = findViewById(R.id.exit_button);
+        confirm_button.setOnClickListener(this);
+        exit_button.setOnClickListener(this);
 
     }
 
@@ -34,6 +36,7 @@ public class Schedule extends AppCompatActivity implements View.OnClickListener{
                 Intent intent = new Intent(this, ScheduleDay.class);
                 intent.putExtras(b);
                 startActivity(intent);
+                break;
             case R.id.exit_button:
                 finish();
                 break;

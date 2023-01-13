@@ -34,6 +34,7 @@ public class ScheduleDay extends AppCompatActivity implements View.OnClickListen
             case R.id.add_button:
                 if(textbox.getText() != null)
                     textAdd.setText(textbox.getText());
+                    textbox.setText("");
                 break;
             case R.id.exit_button:
                 finish();

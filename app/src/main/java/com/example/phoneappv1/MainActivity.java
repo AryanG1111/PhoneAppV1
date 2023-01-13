@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case ("Brain Training"):
                     intent = new Intent(this, BrainTraining.class);
                     startActivity(intent);
-                    Toast.makeText(this, a, Toast.LENGTH_SHORT).show();
                     break;
                 case ("Riddles"):
                     intent = new Intent(this, Riddles.class);
